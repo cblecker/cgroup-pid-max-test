@@ -1,6 +1,5 @@
 from multiprocessing import Process
 import threading
-import argparse
 import os
 import time
 
@@ -40,23 +39,14 @@ def create_processes_n_threads(howmany):
         count += 1
 
 if __name__ == '__main__':
-    print("Starting in 10 seconds!")
-    time.sleep(10)
-
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument('--mode', type=str, help="test mode (process/thread, default: process)")
-    # parser.add_argument('--howmany', type=int, help="enter how many process or thread do you want to create")
-
-    # args = parser.parse_args()
-
-    # mode = args.mode
-    # howmany = args.howmany
-
     mode = os.getenv('MODE', 'thread')
     howmany = int(os.getenv('HOWMANY', '1'))
 
     print("Test Mode : ", mode)
     print("Target Number to create process/thread/each of process and thread : ", howmany)
+
+    print("Starting in 10 seconds!")
+    time.sleep(10)
 
     if mode == "thread":
         create_threads(howmany)
