@@ -1,6 +1,5 @@
-FROM python:3.8
+FROM python:3-slim
 
 ADD tester.py /
 
-ENTRYPOINT ["python"]
-CMD ["./tester.py"]
+CMD ["python", "/tester.py"]
