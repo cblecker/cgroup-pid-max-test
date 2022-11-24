@@ -40,7 +40,8 @@ def create_processes_n_threads(howmany):
         count += 1
 
 if __name__ == '__main__':
-    print("Start!")
+    print("Starting in 10 seconds!")
+    time.sleep(10)
 
     # parser = argparse.ArgumentParser()
     # parser.add_argument('--mode', type=str, help="test mode (process/thread, default: process)")
@@ -51,7 +52,7 @@ if __name__ == '__main__':
     # mode = args.mode
     # howmany = args.howmany
 
-    mode = os.getenv('MODE', 'process')
+    mode = os.getenv('MODE', 'thread')
     howmany = int(os.getenv('HOWMANY', '1'))
 
     print("Test Mode : ", mode)
